@@ -13,11 +13,11 @@ repository:
 #### required fields for prediction
 inference:
     prediction_script: "trained-models/DeepCSR/deepcsr/1.0/predict.py"
-    command: f"python {MODELS_PATH}/{model}/predict.py --conf_path {infile[0]} --model_checkpoint {infile[1]}"
+    command: f"python {MODELS_PATH}/{model}/predict.py --conf_path {infile[0]} --model_checkpoint {infile[1]} --dataset {infile[2]} --output_dir {infile[3]}"
 
     #### input data characteristics
     data_spec:
-      infile: {n_files: 2}
+      infile: {n_files: 4}
 
 #### model information and help
 model:
