@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.3.1-cudnn8-devel-ubuntu20.04 
+FROM nvidia/cuda:12.2.0-devel-ubuntu20.04
 ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
 ENV PATH=/opt/miniconda3/bin:$PATH
@@ -8,7 +8,7 @@ ENV PYTHONIOENCODING=UTF-8
 ENV PIPENV_VENV_IN_PROJECT=1
 ENV JCC_JDK=/usr/lib/jvm/java-8-openjdk-amd64
 RUN USE_CUDA=1
-RUN CUDA_VERSION=11.3.1
+RUN CUDA_VERSION=12.2.0
 RUN CUDNN_VERSION=8
 RUN LINUX_DISTRO=ubuntu
 RUN DISTRO_VERSION=20.04
@@ -32,7 +32,7 @@ ENV PYTHON_VERSION=3.8
 ENV CONDA_URL=https://repo.anaconda.com/miniconda/Miniconda3-py38_4.10.3-Linux-x86_64.sh
 RUN curl -fsSL -v -o ~/miniconda.sh -O ${CONDA_URL} && \
 chmod +x ~/miniconda.sh && \
-~/miniconda.sh -b -p /opt/miniconda3 
+~/miniconda.sh -b -p /opt/miniconda3
 
 WORKDIR /app
 COPY requirements.yml .
