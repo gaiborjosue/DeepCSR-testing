@@ -84,7 +84,7 @@ if __name__ == '__main__':
             #HD.append(hd)
             print('sub_id',sub_id)
             if config.save_mesh_eval:
-                path_save_mesh = "./ckpts/eval/pialnn_mesh_eval_"\
+                path_save_mesh = "./pialnn_mesh_eval_"\
                         +config.hemisphere+"_subject_"+str(sub_id)+".obj"
 
                 normal = compute_normal(v_pred, f_in)
@@ -92,7 +92,7 @@ if __name__ == '__main__':
                 save_mesh_obj(v_pred_eval, f_pred_eval, n_pred_eval, path_save_mesh)
                 
                 ################
-                path_save_mesh = "./ckpts/eval/pialnn_mesh_eval_"\
+                path_save_mesh = "./pialnn_mesh_eval_"\
                         +config.hemisphere+"_subject_"+str(sub_id)+"_gt.obj"
 
                 normal = compute_normal(v_gt, f_gt)
