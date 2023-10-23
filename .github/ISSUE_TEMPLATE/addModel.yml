@@ -1,0 +1,33 @@
+name: ⬆️ Add a new model
+description: Add a new model to the nobrainer-zoo
+title: "New Model: {org}/{model}/{version}"
+labels: ["new-model"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Recommendations to the user:
+
+        :one:. Include a docker folder inside your project which includes the dockerfile and everything associated with it (absolutely recommended).
+
+        :two:. For your prediction script (if applicable), specify path to the best_model (or weights) and 'sample' dataset at the command line using flags.
+
+        :three:. Please avoid absolute paths in any of your scripts. Ideally, relative paths with respect to the root (project) folder is mandatory in the test-command.
+
+        :four:. This issue's title should start with "New Model:" plus your model's org/model/version.
+
+        :five:. All github urls must point to files/folders in the master/main branch of your repository.
+
+        :warning: Please fill all the details of this form to add your model sucessfully to the zoo. Thank you!
+
+        :red_circle: *If the automatic checks fail, this issue will be tagged as 'failed.' However, fix the issues and comment "Ready-to-test" to test again.
+        
+  - type: input
+    id: path
+    attributes:
+      label: Model's repository path
+      description: Please enter the folder structure for your model {org}/{model}/{version}. 
+      placeholder: ex. DeepCSR/deepcsr/1.0
+    validations:
+      required: true
