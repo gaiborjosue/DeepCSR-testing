@@ -1,8 +1,8 @@
 name: Assign Issue to User
 
 on:
-  issues:
-    types: ["opened"]
+  issue_comment:
+    types: ["edited"]
 
 jobs:
   assignUser:
