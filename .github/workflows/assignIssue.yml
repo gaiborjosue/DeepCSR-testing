@@ -1,7 +1,7 @@
 name: Assign Issue to User
 
 on:
-  issue_comment:
+  issues:
     types: ["edited"]
 
 jobs:
