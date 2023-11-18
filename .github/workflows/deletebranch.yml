@@ -1,0 +1,17 @@
+name: Assign Issue to User
+
+on:
+  issues:
+    types: ["opened"]
+
+jobs:
+  assignUser:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Delete branch
+        uses: dawidd6/action-delete-branch@v3
+        with:
+          github_token: ${{secrets.GH_TOKEN}}
+          branches: test
+          suffix: -23
